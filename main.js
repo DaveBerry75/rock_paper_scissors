@@ -13,6 +13,15 @@ function getComputerChoice() {
 
 getComputerChoice();
 
+// Create a function called getHumanChoice
+function getHumanChoice() {
+    
+}
+
+//  Return a valid choice dependant upon what the user inputs
+
+//  Test desired output is returned using console.log
+
 
 
 
