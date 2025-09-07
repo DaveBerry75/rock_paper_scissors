@@ -1,9 +1,12 @@
-// Create a function called getComputerChoice and use math.random() to get a random number between 0 and 1
+// Create a function called getComputerChoice and use math.random() and Math.floor to get a random integer between 0 and 9
 function getComputerChoice() {
-    console.log(Math.random());
+    console.log(Math.floor(Math.random() * 10));
 }
 
 getComputerChoice();
+
+
+
 // Multiply these numbers by ten and round down to the nearest integer
 
 // Use only numbers 1, 2 and 3
