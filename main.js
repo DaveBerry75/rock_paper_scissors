@@ -15,7 +15,7 @@ getComputerChoice();
 
 // Create a function called getHumanChoice
 function getHumanChoice() {
-    let text = prompt("Enter your choice - rock, paper or scissors");
+    let text = prompt("Enter your choice - rock, paper or scissors").toLowerCase();
 //  Return a valid choice dependant upon what the user inputs
     if (text == "rock") {
         console.log(text);
