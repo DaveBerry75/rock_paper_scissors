@@ -15,8 +15,12 @@ getComputerChoice();
 
 // Create a function called getHumanChoice
 function getHumanChoice() {
+    let text = prompt("Enter your choice - rock, paper or scissors");
+
     
 }
+
+getHumanChoice();
 
 //  Return a valid choice dependant upon what the user inputs
 
