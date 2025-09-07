@@ -13,7 +13,7 @@ function getComputerChoice() {
 
 getComputerChoice();
 
-// Create a function called getHumanChoice
+// Create a function called getHumanChoice and make user input case-insensitive
 function getHumanChoice() {
     let text = prompt("Enter your choice - rock, paper or scissors").toLowerCase();
 //  Return a valid choice dependant upon what the user inputs
@@ -28,9 +28,12 @@ function getHumanChoice() {
 
 getHumanChoice();
 
-// Make user input case-insensitive
+// Create two new variables to keep scores, and give initial values
 
-//  Test desired output is returned using console.log
+let humanScore = 0;
+let computerScore = 0;
+
+
 
 
 
