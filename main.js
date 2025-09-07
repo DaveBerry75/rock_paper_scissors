@@ -16,13 +16,19 @@ getComputerChoice();
 // Create a function called getHumanChoice
 function getHumanChoice() {
     let text = prompt("Enter your choice - rock, paper or scissors");
-
-    
+//  Return a valid choice dependant upon what the user inputs
+    if (text == "rock") {
+        console.log(text);
+    } else if (text == "paper") {
+        console.log(text);
+    } else if (text == "scissors") {
+        console.log(text);
+    }
 }
 
 getHumanChoice();
 
-//  Return a valid choice dependant upon what the user inputs
+// Make user input case-insensitive
 
 //  Test desired output is returned using console.log
 
