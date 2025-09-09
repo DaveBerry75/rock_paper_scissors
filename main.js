@@ -1,38 +1,69 @@
-// Create a function called getComputerChoice and use math.random() and Math.floor to get a random integer from 1 - 3
+// Function which generates a random number and converts to the defined string
+
 function getComputerChoice() {
+
     let randomNum = Math.floor(Math.random() * 3) + 1;
-// Assign rock, paper and scissors to 1, 2 and 3 respectively
+    let computerChoice = "";
+
     if (randomNum === 1) {
-        console.log("rock");
+        computerChoice = "rock";
     } else if (randomNum === 2) {
-        console.log("paper");
+        computerChoice = "paper";
     } else {
-        console.log("scissors");
+        computerChoice = "scissors";
     }
+
+    return computerChoice;
+
 }
 
 getComputerChoice();
 
-// Create a function called getHumanChoice and make user input case-insensitive
+
+// Function which takes in a user input
+
 function getHumanChoice() {
-    let text = prompt("Enter your choice - rock, paper or scissors").toLowerCase();
-//  Return a valid choice dependant upon what the user inputs
-    if (text == "rock") {
-        console.log(text);
-    } else if (text == "paper") {
-        console.log(text);
-    } else if (text == "scissors") {
-        console.log(text);
-    }
+    let humanChoice = prompt("Enter your choice - rock, paper or scissors").toLowerCase();
+    
+    return humanChoice;
+
 }
 
 getHumanChoice();
+
 
 // Create two new variables to keep scores, and give initial values
 
 let humanScore = 0;
 let computerScore = 0;
 
+
+// Function which plays a single round of the game and logs results to the console
+
+function playRound(humanChoice, computerChoice) {
+
+    if(humanSelection === computerSelection) {
+        
+        console.log(`Draw! You chose: ${humanSelection}, computer chose: ${computerSelection}`);
+
+    } else if ((humanSelection === "rock" && computerSelection === "scissors") ||
+              (humanSelection === "scissors" && computerSelection === "paper") ||
+              (humanSelection === "paper" && computerSelection === "rock")) {
+
+                console.log(`You win!!! ${humanSelection} beats ${computerSelection}`);
+
+              } else {
+
+                console.log(`You lose! ${computerSelection} beats ${humanSelection}`);
+                
+              }
+        
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
 
 
 
