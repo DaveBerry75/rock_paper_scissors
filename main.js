@@ -37,24 +37,34 @@ getHumanChoice();
 let humanScore = 0;
 let computerScore = 0;
 
-
-// Function which plays a single round of the game and logs results to the console
+function playGame() {
+    // Function which plays a single round of the game and logs results to the console
 
 function playRound(humanChoice, computerChoice) {
-
+    //  For a draw
     if(humanSelection === computerSelection) {
         
         console.log(`Draw! You chose: ${humanSelection}, computer chose: ${computerSelection}`);
 
+        console.log(`Your score = ${humanScore}, Computer score = ${computerScore}`)
+    //  Human win
     } else if ((humanSelection === "rock" && computerSelection === "scissors") ||
               (humanSelection === "scissors" && computerSelection === "paper") ||
               (humanSelection === "paper" && computerSelection === "rock")) {
 
                 console.log(`You win!!! ${humanSelection} beats ${computerSelection}`);
 
+                humanScore++;
+
+                console.log(`Your score = ${humanScore}, Computer score = ${computerScore}`);
+    //  Computer win
               } else {
 
                 console.log(`You lose! ${computerSelection} beats ${humanSelection}`);
+
+                computerScore++;
+
+                console.log(`Your score = ${humanScore}, Computer score = ${computerScore}`);
                 
               }
         
@@ -65,8 +75,14 @@ const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
 
+}
 
+playGame();
+playGame();
+playGame();
+playGame();
+playGame();
 
-
+// Need to keep score and declare a winner at the end
 
 
