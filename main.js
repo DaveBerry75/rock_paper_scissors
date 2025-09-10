@@ -20,7 +20,7 @@ function getComputerChoice() {
 getComputerChoice();
 
 
-// Function which takes in a user input
+// Function which takes in a case insensitive user input
 
 function getHumanChoice() {
     let humanChoice = prompt("Enter your choice - rock, paper or scissors").toLowerCase();
@@ -32,42 +32,54 @@ function getHumanChoice() {
 getHumanChoice();
 
 
-// Create two new variables to keep scores, and give initial values
+// Two new variables to keep scores, and one to keep count of the rounds played
 
 let humanScore = 0;
 let computerScore = 0;
+let counter = 0;
 
 function playGame() {
+
     // Function which plays a single round of the game and logs results to the console
 
 function playRound(humanChoice, computerChoice) {
+
     //  For a draw
     if(humanSelection === computerSelection) {
         
-        console.log(`Draw! You chose: ${humanSelection}, computer chose: ${computerSelection}`);
+        console.log(`Draw! Both chose: ${humanSelection}`);
 
-        console.log(`Your score = ${humanScore}, Computer score = ${computerScore}`)
     //  Human win
     } else if ((humanSelection === "rock" && computerSelection === "scissors") ||
               (humanSelection === "scissors" && computerSelection === "paper") ||
               (humanSelection === "paper" && computerSelection === "rock")) {
 
-                console.log(`You win!!! ${humanSelection} beats ${computerSelection}`);
+                console.log(`You win! ${humanSelection} beats ${computerSelection}`);
 
                 humanScore++;
-
-                console.log(`Your score = ${humanScore}, Computer score = ${computerScore}`);
-    //  Computer win
+    // For a loss
               } else {
 
                 console.log(`You lose! ${computerSelection} beats ${humanSelection}`);
 
                 computerScore++;
-
-                console.log(`Your score = ${humanScore}, Computer score = ${computerScore}`);
                 
               }
-        
+
+
+    // After 5 rounds declare result and scores   
+    counter++;
+    if(counter === 5) {
+        console.log("Game Over");
+        console.log(`Your score = ${humanScore}, Computer score = ${computerScore}`);
+        if(humanScore === computerScore) {
+            console.log("Draw!");
+        } else if(humanScore > computerScore) {
+            console.log("You Win!!!");
+        } else {
+            console.log("You lose!");
+        }
+    }
 }
 
 const humanSelection = getHumanChoice();
@@ -77,12 +89,12 @@ playRound(humanSelection, computerSelection);
 
 }
 
+// Call function for 5 rounds
 playGame();
 playGame();
 playGame();
 playGame();
 playGame();
 
-// Need to keep score and declare a winner at the end
 
 
